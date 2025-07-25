@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q | Quote app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle fill='%232196f3' cx='32' cy='32' r='32'/%3E%3Ctext x='50%' y='50%' text-anchor='middle' dy='.35em' font-family='Playfair Display, serif' font-size='38' fill='white'%3EQ%3C/text%3E%3C/svg%3E">
+    
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button onclick="getquote(api_url)">New Quote</button>
+            <button onclick="post()"><img src="icon.JPG">Post</button>
+            <button onclick="postWhatsapp()" class="whatsapp-btn">WhatsApp</button>
+        </div>
+        
+    </div>
+    <script>
+        // Fetching a random quote from the API
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        const api_url = "https:dummyjson.com/quotes/random";
+
+        async function getquote(url) {
+
+            const response = await fetch(url);
+            var data = await response.json();
+            
+           quote.innerHTML = data.quote;
+            author.innerHTML = data.author;
+            
+        }
+        getquote(api_url);
+
+        function post() {
+           window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + " - " + author.innerHTML, "_blank");
+        }
+
+        function postWhatsapp() {
+           const text = encodeURIComponent(quote.innerHTML + " - " + author.innerHTML);
+           window.open("https://wa.me/status?text=" + text, "_blank");
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+body{
+    background: rgba(135, 170, 209, 0.966);
+}
+
+.quote-box {
+    background: #fff;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.quote-box h2{
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.quote-box h2::after{
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.quote-box blockquote{
+    font-size: 26px;
+    min-height: 110px;
+}
+.quote-box blockquote::before, .quote-box blockquote::after {
+    content: '"';
+}
+.quote-box span{
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+.quote-box span::before{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+.quote-box div{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-box button{
+    background: black;
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.966);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.quote-box button img{
+    width: 20px;
+    margin-right: 10px;
+}
+.quote-box button:nth-child(2){
+    background: transparent;
+    color: black;
+}
+
+/* WhatsApp button green style */
+.whatsapp-btn {
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+.whatsapp-btn:hover {
+    background: #128C7E !important;
+}
+
+/* Responsive: ensure WhatsApp button matches others */
+@media (max-width:369px) {
+    .whatsapp-btn {
+        width: 110px !important;
+        height: 30px !important;
+        border-radius: 25px !important;
+        font-size: 15px;
+    }
+}
+@media (min-width:370px) {
+    .whatsapp-btn {
+        width: 110px !important;
+        height: 30px !important;
+        border-radius: 25px !important;
+        font-size: 15px;
+    }
+}
+@media (min-width:600px) {
+    .whatsapp-btn {
+        width: 110px !important;
+        height: 30px !important;
+        border-radius: 25px !important;
+        font-size: 15px;
+    }
+}
+@media (min-width:750px) {
+    .whatsapp-btn {
+        width: 150px !important;
+        height: 50px !important;
+        border-radius: 25px !important;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:369px) {
+    .quote-box {
+        width: 260px;
+    }
+    .quote-box h2{
+        font-size: 30px;
+    }
+    .quote-box blockquote {
+        font-size: 15px;
+    }
+    .quote-box span {
+        font-size: 10px;
+    }
+    .quote-box button,
+    .whatsapp-btn {
+        width: 70px !important;
+        height: 22px !important;
+        border-radius: 14px !important;
+        font-size: 10px !important;
+        margin: 2px !important;
+        padding: 0 2px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .quote-box button img {
+        width: 12px !important;
+        margin-right: 4px !important;
+    }
+    .quote-box button:first-child {
+        font-size: 9px !important;
+    }
+    .quote-box div {
+        flex-direction: row;
+        gap: 2px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (min-width:370px) {
+    .quote-box {
+        width: 360px;
+    }
+    .quote-box h2{
+        font-size: 30px;
+    }
+    .quote-box blockquote {
+        font-size: 15px;
+    }
+    .quote-box span {
+        font-size: 15px;
+    }
+    .quote-box button {
+        width: 110px;
+        height: 30px;
+        border-radius: 25px;
+    }
+}
+@media (min-width:600px) {
+    .quote-box {
+        width: 590px;
+    }
+    .quote-box h2{
+        font-size: 30px;
+    }
+    .quote-box blockquote {
+        font-size: 15px;
+    }
+    .quote-box span {
+        font-size: 15px;
+    }
+    .quote-box button {
+        width: 110px;
+        height: 30px;
+        border-radius: 25px;
+    }
+}
+@media (min-width:750px) {
+    .quote-box {
+        width: 700px;
+    }
+    .quote-box h2{
+        font-size: 32px;
+    }
+    .quote-box blockquote {
+        font-size: 22px;
+    }
+    .quote-box span {
+        font-size: 16px;
+    }
+    .quote-box button {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+    }
+}
